@@ -1,0 +1,135 @@
+
+
+
+{% extends "layout.html" %}
+{% block content %}
+         <!-- sidebar -->
+<div class="row">
+  <div class="col-md-3">
+<div class="sidebar mt-4 d-none d-md-block">
+            <div class="sidebar_top ">
+              <img src="{{ url_for('static',filename='profile/1.jpg') }}">
+             <h2>
+               <div class="m-4"></div>
+              <a href="{{ url_for('account') }}">
+              
+              {{ current_user.username }}
+            </a>
+
+             </h2>
+             <h4>{{ current_user.email }}</h4>
+            </div>
+            <div class="sidebar_stats">
+<div class="sidebar_stat">
+ <h3>
+  Welcome
+ </h3>
+</div>
+
+            </div>
+            <div class="sidebar_bottom">
+                <h3>Explore!</h3>
+                <div class="sidebar_recentitem para">
+                   
+                     <p><a href="https://www.spotify.com/us/">#music</a></p>
+                 </div>
+                 
+                  <div class="sidebar_recentitem para">
+                     
+                      <p><a href="https://www.cricbuzz.com/cricket-match/live-scores">#sports</a></p>
+                  </div>
+                  <div class="sidebar_recentitem para">
+                     
+                      <p><a href="https://www.netflix.com/in/">#shows</a></p>
+                  </div>
+                  <div class="sidebar_recentitem para">
+                     
+                      <p><a href="https://medium.com/">#reading</a></p>
+                  </div>
+                  <div class="sidebar_recentitem para">
+                     
+                   <p><a href="https://podcasts.google.com/">#podcats</a></p>
+               </div>
+               
+
+            </div>
+
+</div>
+</div>
+<div class="col-md-6 p-0 mt-3">
+<!-- feed -->
+<div class="feed">
+
+        
+{% for post in posts %}
+<div class="post">
+    <div class="post_header">
+      <img class="rounded-circle article-img" src="{{ url_for('static',filename='profile/' + post.author.image_file)}}"
+  
+  <img class="fas fa-user "></img>
+  <div class="post_info">
+    <h2>{{post.author.username}}</h2>
+    <p>{{post.date_posted.strftime('%Y-%m-%d')}}</p>
+  </div>
+  </div>
+    <div class="post_body"> 
+      <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>   
+  <p>{{post.content}}</p>
+  </div>
+    <div class="feed_inputoption">
+      <div class="input_option">
+  
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<div class="col-md-3">
+  <!-- widgets -->
+<div class="widgets d-none d-md-block">
+    <div class="widgets_header token">
+      <h1>Tokens</h1>
+    
+    </div>
+    <div class="widgets_article">
+  <div class="widgets_articleleft">
+  
+  </div>
+  <div class="widgets_articleright">
+    <h3>{{current_user.token_count}}</h3>
+  </div>
+  </div>
+  <div class="widgets_article">
+    <div class="widgets_articleleft">
+    
+    </div>
+    <div class="widgets_articleright flag">
+      <h2>Flags</h2>
+      <h3>{{current_user.flag_count}}</h3>
+    </div>
+    </div>
+    <div class="widgets_article">
+      <div class="widgets_articleleft">
+      
+      </div>
+      <!-- <div class="widgets_articleright">
+        <h2>nothing</h2>
+        <P>helooooo</P>
+      </div> -->
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    </div>
+  </div>
+  <!-- widgets -->
+</div>
+
+  {% endblock content %}
