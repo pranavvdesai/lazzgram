@@ -1,4 +1,4 @@
-# Lazarus.com
+
 ## Inspiration ⚡_
 
 All of the social media platforms that we have right now are fundamentally flawed, because they all rely on advertising as an optimization function, i.e the machine learning algorithms working underneath them are trying to maximize the time spent by a user on that platform by showing them either content that they love or the content they hate. 
@@ -44,7 +44,7 @@ And of course Dillinger itself is open source with a [public repository][dill]
 #### Accomplishments that we are proud of 😌
 We created a completely functional application, which can make a small difference in in our everyday health. We successfully made the applicaition which easly interact with text sentiment of the user, We are proud that we could shape our idea into a functioning application which can be used by any user!
 
-## What's next for Lazurus.com 📈
+## What's next 📈
 Later, we have planned that we’ll add many more features to the product such as 
 
 > Membership option :- The membership option won't be a paid one but it’ll have to be earned by doing something really extraordinary for the community. On becoming a member someone could expect even better rewards.
@@ -57,8 +57,6 @@ Later, we have planned that we’ll add many more features to the product such a
 
 > Building upon our Reward system and including much more than just coupons.
 
-## Help File 💻
-git clone https://github.com/Abhash600/Lazarus.git
 ## Built With ⚙
 - Python (for Natural Language Processing) 
 - Flask (Web backend)
